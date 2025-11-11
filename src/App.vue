@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import { AppHeader } from '@common/components/layout/header'
+import { AppHeader, TopHeader } from '@common/components/layout/header'
 </script>
 
 <template>
   <div class="min-h-screen bg-background">
+    <TopHeader />
     <AppHeader />
     <main>
       <router-view />

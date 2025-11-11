@@ -1,3 +1,4 @@
+export { default as TopHeader } from './TopHeader.vue'
 export { default as AppHeader } from './AppHeader.vue'
 export { default as Logo } from './Logo.vue'
 export { default as CatalogButton } from './CatalogButton.vue'

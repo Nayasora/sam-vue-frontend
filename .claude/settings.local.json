@@ -24,7 +24,13 @@
       "Bash(identify:*)",
       "Bash(git log:*)",
       "Bash(git ls-tree:*)",
-      "mcp__figma-desktop__get_variable_defs"
+      "mcp__figma-desktop__get_variable_defs",
+      "Bash(cat:*)",
+      "Bash(taskkill:*)",
+      "mcp__chrome-devtools__press_key",
+      "Bash(tasklist:*)",
+      "Bash(netstat:*)",
+      "Bash(cmd //c \"taskkill /F /PID 14580\")"
     ],
     "deny": [],
     "ask": []

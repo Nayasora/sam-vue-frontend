@@ -10,7 +10,7 @@
       />
       <button class="mic-button" type="button" aria-label="Voice search">
         <img
-          src="/app-header/icons/progress-input-input-icon-audio-outlined.svg"
+          src="/mavbar-main/icons/progress-input-input-icon-audio-outlined.svg"
           alt=""
           class="h-[16px] w-[16px]"
         />

@@ -4,17 +4,17 @@ import type { NavItem } from './types'
 
 const navItems: NavItem[] = [
   {
-    icon: '/app-header/icons/progress-navbar-item-heart.svg',
+    icon: '/mavbar-main/icons/progress-navbar-item-heart.svg',
     label: 'Избранное',
     key: 'favorites'
   },
   {
-    icon: '/app-header/icons/progress-navbar-item-box-iso.svg',
+    icon: '/mavbar-main/icons/progress-navbar-item-box-iso.svg',
     label: 'Заказы',
     key: 'orders'
   },
   {
-    icon: '/app-header/icons/progress-navbar-item-shopping-bag.svg',
+    icon: '/mavbar-main/icons/progress-navbar-item-shopping-bag.svg',
     label: 'Корзина',
     key: 'cart'
   }

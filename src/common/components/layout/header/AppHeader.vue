@@ -37,7 +37,7 @@ import LoginButton from './LoginButton.vue'
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 48px;
+  padding: 12px 48px;
   gap: 24px;
   max-width: 100%;
   margin: 0 auto;

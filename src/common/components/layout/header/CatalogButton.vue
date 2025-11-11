@@ -3,7 +3,7 @@
 <template>
   <button class="catalog-button">
     <img
-      src="/app-header/icons/progress-menu.svg"
+      src="/mavbar-main/icons/progress-menu.svg"
       alt=""
       class="h-[14px] w-[18px]"
     />

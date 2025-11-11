@@ -3,7 +3,7 @@
 <template>
   <div class="flex flex-col items-start gap-0.5">
     <img
-      src="/app-header/images/logo.svg"
+      src="/mavbar-main/images/logo.svg"
       alt="SAM"
       class=""
     />
