@@ -1,57 +1,91 @@
-<script setup lang="ts">
-import { ref } from 'vue'
-import { useI18n } from 'vue-i18n'
-import { Search } from 'lucide-vue-next'
-
-interface SearchInputProps {
-  modelValue?: string
-  placeholder?: string
-}
-
-const props = withDefaults(defineProps<SearchInputProps>(), {
-  modelValue: ''
-})
-
-const emit = defineEmits<{
-  'update:modelValue': [value: string]
-  search: [query: string]
-  submit: [query: string]
-}>()
-
-const { t } = useI18n()
-const searchQuery = ref(props.modelValue)
-
-const handleInput = (event: Event) => {
-  const value = (event.target as HTMLInputElement).value
-  searchQuery.value = value
-  emit('update:modelValue', value)
-  emit('search', value)
-}
-
-const handleSubmit = (event: Event) => {
-  event.preventDefault()
-  emit('submit', searchQuery.value)
-}
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <form
-    class="relative flex w-full items-center"
-    @submit="handleSubmit"
-  >
-    <!-- Search Icon -->
-    <Search
-      :size="20"
-      class="absolute left-3 text-muted-foreground"
-    />
-
-    <!-- Input -->
-    <input
-      :value="searchQuery"
-      type="search"
-      :placeholder="placeholder || t('header.searchPlaceholder')"
-      class="h-10 w-full rounded-lg border border-input bg-background pl-10 pr-4 text-sm transition-colors placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
-      @input="handleInput"
-    />
-  </form>
+  <div class="search-container">
+    <div class="search-input-wrapper">
+      <input
+        type="text"
+        placeholder="Поиск"
+        class="search-input"
+      />
+      <button class="mic-button" type="button" aria-label="Voice search">
+        <img
+          src="/app-header/icons/progress-input-input-icon-audio-outlined.svg"
+          alt=""
+          class="h-[16px] w-[16px]"
+        />
+      </button>
+    </div>
+    <button class="search-button">Найти</button>
+  </div>
 </template>
+
+<style scoped>
+.search-container {
+  display: flex;
+  flex: 1;
+  height: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.search-input-wrapper {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  padding: 0 12px;
+  gap: 8px;
+  background: white;
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  line-height: 24px;
+  color: rgba(0, 0, 0, 0.88);
+  background: transparent;
+}
+
+.search-input::placeholder {
+  color: rgba(0, 0, 0, 0.25);
+}
+
+.mic-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  transition: opacity 0.2s;
+}
+
+.mic-button:hover {
+  opacity: 0.7;
+}
+
+.search-button {
+  background: #1677ff;
+  color: white;
+  border: none;
+  padding: 0 24px;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.2s;
+}
+
+.search-button:hover {
+  background: #4096ff;
+}
+
+.search-button:active {
+  background: #0958d9;
+}
+</style>

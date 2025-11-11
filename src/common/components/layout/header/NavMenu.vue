@@ -1,43 +1,41 @@
 <script setup lang="ts">
-import { useI18n } from 'vue-i18n'
 import NavMenuItem from './NavMenuItem.vue'
+import type { NavItem } from './types'
 
-interface NavMenuProps {
-  favoritesCount?: number
-  ordersCount?: number
-  cartCount?: number
-}
-
-withDefaults(defineProps<NavMenuProps>(), {
-  favoritesCount: 0,
-  ordersCount: 0,
-  cartCount: 0
-})
-
-const { t } = useI18n()
+const navItems: NavItem[] = [
+  {
+    icon: '/app-header/icons/progress-navbar-item-heart.svg',
+    label: 'Избранное',
+    key: 'favorites'
+  },
+  {
+    icon: '/app-header/icons/progress-navbar-item-box-iso.svg',
+    label: 'Заказы',
+    key: 'orders'
+  },
+  {
+    icon: '/app-header/icons/progress-navbar-item-shopping-bag.svg',
+    label: 'Корзина',
+    key: 'cart'
+  }
+]
 </script>
 
 <template>
-  <nav class="flex items-center gap-6">
+  <nav class="nav-menu">
     <NavMenuItem
-      icon="heart"
-      :label="t('header.favorites')"
-      :badge="favoritesCount"
-      to="/favorites"
-    />
-
-    <NavMenuItem
-      icon="package"
-      :label="t('header.orders')"
-      :badge="ordersCount"
-      to="/orders"
-    />
-
-    <NavMenuItem
-      icon="shopping-bag"
-      :label="t('header.cart')"
-      :badge="cartCount"
-      to="/cart"
+      v-for="item in navItems"
+      :key="item.key"
+      :icon="item.icon"
+      :label="item.label"
     />
   </nav>
 </template>
+
+<style scoped>
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+</style>
