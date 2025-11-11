@@ -5,6 +5,13 @@ export interface CategoryCard {
   link: string
 }
 
+export interface PromoBanner {
+  id: string
+  title: string
+  image: string
+  link: string
+}
+
 export const categoryCards: CategoryCard[] = [
     {
     id: 'servers',
@@ -89,5 +96,32 @@ export const categoryCards: CategoryCard[] = [
         name: 'ОЗУ',
         image: new URL('../assets/35362449031dcf0e83e82af2655a71ff05ac9cbc.png', import.meta.url).href,
         link: '/store/ram'
+    }
+]
+
+export const promoBanners: PromoBanner[] = [
+    {
+        id: "1",
+        title: 'dell-cashback',
+        image: new URL('../assets/ddea76344e58ca1c35dcc0c6697ff418cab4f077.png', import.meta.url).href,
+        link: '/store/servers'
+    },
+    {
+        id: "2",
+        title: 'dell-systems',
+        image: new URL('../assets/f1db2125d63856add6322e80f1d48466c5e32926.png', import.meta.url).href,
+        link: '/store/storage'
+    },
+    {
+        id: "3",
+        title: 'dell-cashback',
+        image: new URL('../assets/ddea76344e58ca1c35dcc0c6697ff418cab4f077.png', import.meta.url).href,
+        link: '/store/servers'
+    },
+    {
+        id: "4",
+        title: 'dell-systems',
+        image: new URL('../assets/f1db2125d63856add6322e80f1d48466c5e32926.png', import.meta.url).href,
+        link: '/store/storage'
     }
 ]

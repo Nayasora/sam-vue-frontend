@@ -16,6 +16,8 @@
   "dependencies": {
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "embla-carousel-autoplay": "^8.6.0",
+    "embla-carousel-vue": "^8.6.0",
     "lucide-vue-next": "^0.553.0",
     "pinia": "^3.0.3",
     "reka-ui": "^2.6.0",
