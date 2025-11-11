@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:vue-i18n.intlify.dev)",
+      "WebSearch",
+      "Bash(find:*)",
+      "Bash(dir \"C:\\Users\\sayan\\WebStormProjects\\web\\docker\" 2)",
+      "Bash(nul)",
+      "mcp__figma-desktop__get_screenshot",
+      "mcp__figma-desktop__get_metadata",
+      "mcp__figma-desktop__get_design_context",
+      "Bash(dir:*)",
+      "Bash(npm run dev:*)",
+      "Bash(findstr:*)",
+      "mcp__chrome-devtools__list_pages",
+      "mcp__chrome-devtools__new_page",
+      "mcp__chrome-devtools__take_screenshot",
+      "mcp__chrome-devtools__take_snapshot",
+      "mcp__chrome-devtools__evaluate_script",
+      "mcp__chrome-devtools__list_network_requests",
+      "Bash(npm install:*)",
+      "mcp__chrome-devtools__navigate_page"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
