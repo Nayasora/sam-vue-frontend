@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import { CategoryScroll, PromoCarousel } from '../components'
+import { CategoryScroll, PromoCarousel, PopularProducts } from '../components'
 </script>
 
 <template>
   <div class="store-main">
     <CategoryScroll />
     <PromoCarousel />
+    <PopularProducts />
   </div>
 </template>
 

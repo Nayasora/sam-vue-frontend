@@ -12,6 +12,17 @@ export interface PromoBanner {
   link: string
 }
 
+export interface Product {
+  id: string
+  name: string
+  image: string
+  price: number
+  originalPrice?: number
+  link: string
+  warranty?: string
+  isBestseller?: boolean
+}
+
 export const categoryCards: CategoryCard[] = [
     {
     id: 'servers',
@@ -123,5 +134,88 @@ export const promoBanners: PromoBanner[] = [
         title: 'dell-systems',
         image: new URL('../assets/f1db2125d63856add6322e80f1d48466c5e32926.png', import.meta.url).href,
         link: '/store/storage'
+    }
+]
+
+export const popularProducts: Product[] = [
+    {
+        id: "1",
+        name: 'Сервер HPE ML350 Gen10 P21786-421/1xIntel Xeon 4210R 2.4GHz',
+        image: new URL('../assets/5800e5af6705928628bf4b8855b40ad7445d3d1e.png', import.meta.url).href,
+        price: 322600,
+        originalPrice: 520000,
+        link: '/store/products/1',
+        warranty: '5 лет',
+        isBestseller: true
+    },
+    {
+        id: "2",
+        name: 'Dell PowerEdge R740 Server 2x Intel Xeon Gold 6226R 16-Core',
+        image: new URL('../assets/5800e5af6705928628bf4b8855b40ad7445d3d1e.png', import.meta.url).href,
+        price: 425300,
+        originalPrice: 580000,
+        link: '/store/products/2',
+        warranty: '3 года',
+        isBestseller: false
+    },
+    {
+        id: "3",
+        name: 'Сервер HPE ProLiant DL380 Gen10 Plus 2x Xeon Silver 4314',
+        image: new URL('../assets/5800e5af6705928628bf4b8855b40ad7445d3d1e.png', import.meta.url).href,
+        price: 385900,
+        originalPrice: 490000,
+        link: '/store/products/3',
+        warranty: '5 лет',
+        isBestseller: true
+    },
+    {
+        id: "4",
+        name: 'Lenovo ThinkSystem SR650 V2 Server 2x Intel Xeon Gold 5318Y',
+        image: new URL('../assets/5800e5af6705928628bf4b8855b40ad7445d3d1e.png', import.meta.url).href,
+        price: 298500,
+        originalPrice: 420000,
+        link: '/store/products/4',
+        warranty: '3 года',
+        isBestseller: false
+    },
+    {
+        id: "5",
+        name: 'Сервер Dell PowerEdge R640 2x Intel Xeon Silver 4210R',
+        image: new URL('../assets/5800e5af6705928628bf4b8855b40ad7445d3d1e.png', import.meta.url).href,
+        price: 275600,
+        originalPrice: 360000,
+        link: '/store/products/5',
+        warranty: '5 лет',
+        isBestseller: false
+    },
+    {
+        id: "6",
+        name: 'HPE ProLiant ML110 Gen10 Plus Intel Xeon Silver 4310',
+        image: new URL('../assets/5800e5af6705928628bf4b8855b40ad7445d3d1e.png', import.meta.url).href,
+        price: 195400,
+        originalPrice: 285000,
+        link: '/store/products/6',
+        warranty: '3 года',
+        isBestseller: true
+    },
+    {
+        id: "7",
+        name: 'Сервер Supermicro SuperServer 1029P-WTR Dual Intel Xeon Scalable',
+        image: new URL('../assets/5800e5af6705928628bf4b8855b40ad7445d3d1e.png', import.meta.url).href,
+        price: 356700,
+        originalPrice: 475000,
+        link: '/store/products/7',
+        warranty: '5 лет',
+        isBestseller: false
+    },
+    {
+        id: "8",
+        name: 'Dell EMC PowerEdge R740xd Server 2x Xeon Gold 6240R',
+        image: new URL('../assets/5800e5af6705928628bf4b8855b40ad7445d3d1e.png', import.meta.url).href,
+        price: 445800,
+        originalPrice: 610000,
+        link: '/store/products/8',
+        warranty: '3 года',
+        isBestseller: true
     }
 ]
