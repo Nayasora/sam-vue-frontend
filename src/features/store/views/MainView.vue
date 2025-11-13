@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { CategoryScroll, PromoCarousel, PopularProducts } from '../components'
+import { CategoryScroll, PromoCarousel, PopularProducts, SaleProducts, StorefrontCollection } from '../components'
+import PromoSingle from "@features/store/components/PromoSingle.vue";
 </script>
 
 <template>
@@ -7,6 +8,9 @@ import { CategoryScroll, PromoCarousel, PopularProducts } from '../components'
     <CategoryScroll />
     <PromoCarousel />
     <PopularProducts />
+    <StorefrontCollection />
+    <SaleProducts />
+    <PromoSingle />
   </div>
 </template>
 

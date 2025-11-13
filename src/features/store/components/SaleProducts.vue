@@ -2,8 +2,8 @@
 import { ref } from 'vue'
 import emblaCarouselVue from 'embla-carousel-vue'
 import { ChevronLeft, ChevronRight } from 'lucide-vue-next'
-import ProductCard from './ProductCard.vue'
-import { popularProducts } from '../types'
+import { ProductCard } from './'
+import { saleProducts } from '../types'
 
 const [emblaRef, emblaApi] = emblaCarouselVue({
   loop: true,
@@ -38,13 +38,22 @@ if (emblaApi.value) {
 
 <template>
   <div class="w-full py-8">
-    <h2 class="mb-8 px-12 text-3xl font-bold text-gray-900">Популярные товары</h2>
+    <div class="mb-8 flex items-center justify-between px-12">
+      <h2 class="text-3xl font-bold text-gray-900">Товары по акции</h2>
+      <button
+        class="flex h-[32px] items-center justify-center rounded-[6px] border border-[#1677ff] px-[16px] transition-opacity hover:opacity-80"
+      >
+        <span class="text-[14px] font-normal leading-[22px] text-[#1677ff]">
+          Смотреть все
+        </span>
+      </button>
+    </div>
 
     <div class="relative w-full px-12">
       <div ref="emblaRef" class="overflow-hidden">
         <div class="flex gap-4">
           <div
-            v-for="product in popularProducts"
+            v-for="product in saleProducts"
             :key="product.id"
             class="min-w-0 flex-shrink-0 flex-grow-0"
             style="flex-basis: calc(20% - 12.8px)"
