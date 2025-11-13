@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { AppHeader, TopHeader } from '@common/components/layout/header'
+import { Footer } from '@common/components/layout/footer'
 </script>
 
 <template>
@@ -9,6 +10,7 @@ import { AppHeader, TopHeader } from '@common/components/layout/header'
     <main>
       <router-view />
     </main>
+    <Footer />
   </div>
 </template>
 
