@@ -3,41 +3,43 @@
 
 <template>
   <div class="top-header">
-    <div class="top-header-left">
-      <div class="dropdown-item">
-        <span class="dropdown-text">Алматы</span>
-        <img
-          src="/top-bar/icons/chevron-down.svg"
-          alt=""
-          class="dropdown-icon"
-        />
+    <div class="top-header-wrapper max-w-[1440px] mx-auto px-6">
+      <div class="top-header-left">
+        <div class="dropdown-item">
+          <span class="dropdown-text">Алматы</span>
+          <img
+            src="/top-bar/icons/chevron-down.svg"
+            alt=""
+            class="dropdown-icon"
+          />
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="dropdown-item">
+          <span class="dropdown-text">Русский</span>
+          <img
+            src="/top-bar/icons/chevron-down.svg"
+            alt=""
+            class="dropdown-icon"
+          />
+        </div>
       </div>
 
-      <div class="divider"></div>
-
-      <div class="dropdown-item">
-        <span class="dropdown-text">Русский</span>
-        <img
-          src="/top-bar/icons/chevron-down.svg"
-          alt=""
-          class="dropdown-icon"
-        />
-      </div>
-    </div>
-
-    <div class="top-header-center">
-      <span class="center-text">Бесплатная доставка от 50 000 ₸</span>
-    </div>
-
-    <div class="top-header-right">
-      <div class="text-item">
-        <span class="link-text">Политика возврата товаров</span>
+      <div class="top-header-center">
+        <span class="center-text">Бесплатная доставка от 50 000 ₸</span>
       </div>
 
-      <div class="divider"></div>
+      <div class="top-header-right">
+        <div class="text-item">
+          <span class="link-text">Политика возврата товаров</span>
+        </div>
 
-      <div class="text-item">
-        <span class="link-text">Помощь</span>
+        <div class="divider"></div>
+
+        <div class="text-item">
+          <span class="link-text">Помощь</span>
+        </div>
       </div>
     </div>
   </div>
@@ -46,14 +48,19 @@
 <style scoped>
 .top-header {
   position: relative;
+  width: 100%;
+  height: 38px;
+  background: #1677ff;
+  overflow: hidden;
+}
+
+.top-header-wrapper {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
-  height: 38px;
-  padding: 8px 24px;
-  background: #1677ff;
-  overflow: hidden;
+  height: 100%;
+  padding: 8px 0;
 }
 
 .top-header::before {

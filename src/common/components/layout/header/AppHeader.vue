@@ -8,19 +8,21 @@ import LoginButton from './LoginButton.vue'
 
 <template>
   <header class="app-header">
-    <div class="header-container">
-      <div class="header-logo">
-        <Logo />
-      </div>
+    <div class="max-w-[1440px] mx-auto px-6">
+      <div class="header-container">
+        <div class="header-logo">
+          <Logo />
+        </div>
 
-      <div class="header-center">
-        <CatalogButton />
-        <SearchInput />
-      </div>
+        <div class="header-center">
+          <CatalogButton />
+          <SearchInput />
+        </div>
 
-      <div class="header-right">
-        <NavMenu />
-        <LoginButton />
+        <div class="header-right">
+          <NavMenu />
+          <LoginButton />
+        </div>
       </div>
     </div>
   </header>
@@ -37,10 +39,8 @@ import LoginButton from './LoginButton.vue'
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 48px;
+  padding: 12px 0;
   gap: 24px;
-  max-width: 100%;
-  margin: 0 auto;
 }
 
 .header-logo {

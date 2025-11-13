@@ -6,13 +6,15 @@ import RecentProducts from "@features/store/components/RecentProducts.vue";
 
 <template>
   <div class="store-main">
-    <CategoryScroll />
-    <PromoCarousel />
-    <PopularProducts />
-    <StorefrontCollection />
-    <SaleProducts />
-    <PromoSingle />
-    <RecentProducts />
+    <div class="mx-auto max-w-[1440px]">
+      <CategoryScroll />
+      <PromoCarousel />
+      <PopularProducts />
+      <StorefrontCollection />
+      <SaleProducts />
+      <PromoSingle />
+      <RecentProducts />
+    </div>
   </div>
 </template>
 
