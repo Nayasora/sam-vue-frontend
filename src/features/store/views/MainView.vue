@@ -2,6 +2,7 @@
 import { CategoryScroll, PromoCarousel, PopularProducts, SaleProducts, StorefrontCollection } from '../components'
 import PromoSingle from "@features/store/components/PromoSingle.vue";
 import RecentProducts from "@features/store/components/RecentProducts.vue";
+import {BrandCarousel} from "@features/store/components";
 </script>
 
 <template>
@@ -14,6 +15,7 @@ import RecentProducts from "@features/store/components/RecentProducts.vue";
       <SaleProducts />
       <PromoSingle />
       <RecentProducts />
+      <BrandCarousel />
     </div>
   </div>
 </template>

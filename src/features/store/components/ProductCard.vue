@@ -14,7 +14,7 @@ const formatPrice = (price: number): string => {
 </script>
 
 <template>
-  <div class="flex w-full min-w-[280px] max-w-[320px] flex-shrink-0 flex-col rounded-[6px] bg-white">
+  <div class="flex w-full min-w-[240px] max-w-[280px] flex-shrink-0 flex-col rounded-[6px] bg-white">
     <div class="relative flex h-[240px] items-center justify-center rounded-[12px] bg-gray-100">
       <img
         v-if="product.isBestseller"

@@ -21,8 +21,8 @@ const [emblaRef, emblaApi] = emblaCarouselVue(
   ]
 )
 
-const canScrollPrev = ref(false)
-const canScrollNext = ref(false)
+const canScrollPrev = ref(true)
+const canScrollNext = ref(true)
 
 const onSelect = () => {
   if (!emblaApi.value) return
@@ -38,7 +38,6 @@ const scrollNext = () => {
   if (emblaApi.value) emblaApi.value.scrollNext()
 }
 
-// Watch for carousel initialization and changes
 if (emblaApi.value) {
   emblaApi.value.on('select', onSelect)
   emblaApi.value.on('init', onSelect)
@@ -48,21 +47,19 @@ if (emblaApi.value) {
 
 <template>
   <div class="relative w-full px-12 py-6">
-    <!-- Carousel Container -->
     <div ref="emblaRef" class="overflow-hidden">
       <div class="flex gap-6">
         <div
           v-for="banner in promoBanners"
           :key="banner.id"
           class="min-w-0 flex-shrink-0 flex-grow-0"
-          style="flex-basis: calc(50% - 12px)"
+          style="flex-basis: calc(80% - 12px)"
         >
           <PromoCard :banner="banner" />
         </div>
       </div>
     </div>
 
-    <!-- Previous Button -->
     <button
       type="button"
       :disabled="!canScrollPrev"
@@ -72,7 +69,6 @@ if (emblaApi.value) {
       <ChevronLeft :size="18" class="text-black" />
     </button>
 
-    <!-- Next Button -->
     <button
       type="button"
       :disabled="!canScrollNext"

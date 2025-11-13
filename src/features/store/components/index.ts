@@ -1,3 +1,4 @@
+export { default as BrandCarousel } from './BrandCarousel.vue'
 export { default as CategoryCard } from './CategoryCard.vue'
 export { default as CategoryScroll } from './CategoryScroll.vue'
 export { default as PromoCard } from './PromoCard.vue'

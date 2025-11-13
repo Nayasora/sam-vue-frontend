@@ -23,6 +23,13 @@ export interface Product {
   isBestseller?: boolean
 }
 
+export interface Brand {
+  id: string
+  name: string
+  image: string
+  link: string
+}
+
 export const categoryCards: CategoryCard[] = [
     {
     id: 'servers',
@@ -317,5 +324,56 @@ export const recentProducts: Product[] = [
         link: '/store/products/s5',
         warranty: '5 лет',
         isBestseller: true
+    }
+]
+
+export const brands: Brand[] = [
+    {
+        id: 'dell',
+        name: 'Dell',
+        image: new URL('../assets/brands/1da9db30f1ad6009300698610198d7f3d3dcc078.png', import.meta.url).href,
+        link: '/store/brands/dell'
+    },
+    {
+        id: 'huawei',
+        name: 'Huawei',
+        image: new URL('../assets/brands/cabeb9b733bc2ac985048fa12c9d114866e595e8.png', import.meta.url).href,
+        link: '/store/brands/huawei'
+    },
+    {
+        id: 'ibm',
+        name: 'IBM',
+        image: new URL('../assets/brands/984bed8e6c004fa5e6f8fae0d6d2170b3a42f178.png', import.meta.url).href,
+        link: '/store/brands/ibm'
+    },
+    {
+        id: 'microsoft',
+        name: 'Microsoft',
+        image: new URL('../assets/brands/6c6c9c5d3cc5c1c446ffcb50841f12486d6c357e.png', import.meta.url).href,
+        link: '/store/brands/microsoft'
+    },
+    {
+        id: 'hpe',
+        name: 'HPE',
+        image: new URL('../assets/brands/e12444751c732cd1c813d95d7074f761b0847520.png', import.meta.url).href,
+        link: '/store/brands/hpe'
+    },
+    {
+        id: 'cisco',
+        name: 'Cisco',
+        image: new URL('../assets/brands/7ab8ef93eb1ed045cefc3df32ca40f6979bf0f43.png', import.meta.url).href,
+        link: '/store/brands/cisco'
+    },
+    {
+        id: 'lenovo',
+        name: 'Lenovo',
+        image: new URL('../assets/brands/3ba7f1ff376edf7d7911a82785468b5be77d45e6.png', import.meta.url).href,
+        link: '/store/brands/lenovo'
+    },
+    {
+        id: 'supermicro',
+        name: 'Supermicro',
+        image: new URL('../assets/brands/d4e5d349cb903286fdd011f05dd74a541f7cce2a.png', import.meta.url).href,
+        link: '/store/brands/supermicro'
     }
 ]
