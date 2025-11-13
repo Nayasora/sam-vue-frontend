@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { CategoryScroll, PromoCarousel, PopularProducts, SaleProducts, StorefrontCollection } from '../components'
 import PromoSingle from "@features/store/components/PromoSingle.vue";
+import RecentProducts from "@features/store/components/RecentProducts.vue";
 </script>
 
 <template>
@@ -11,6 +12,7 @@ import PromoSingle from "@features/store/components/PromoSingle.vue";
     <StorefrontCollection />
     <SaleProducts />
     <PromoSingle />
+    <RecentProducts />
   </div>
 </template>
 

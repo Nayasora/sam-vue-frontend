@@ -5,7 +5,7 @@ const promo3 = new URL('../assets/promo-sections/promo-3.png', import.meta.url).
 </script>
 
 <template>
-  <div class="bg-white px-12 py-12">
+  <div class="bg-white px-12 py-8">
     <div class="flex gap-6 w-full">
       <div class="flex-1 aspect-[16/9] rounded-[24px] overflow-hidden">
         <img :src="promo1" alt="" class="w-full h-full object-cover" />

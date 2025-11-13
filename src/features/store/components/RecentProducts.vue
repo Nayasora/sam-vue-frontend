@@ -3,7 +3,7 @@ import { ref } from 'vue'
 import emblaCarouselVue from 'embla-carousel-vue'
 import { ChevronLeft, ChevronRight } from 'lucide-vue-next'
 import { ProductCard } from './'
-import { saleProducts } from '../types'
+import { recentProducts } from '../types'
 
 const [emblaRef, emblaApi] = emblaCarouselVue({
   loop: true,
@@ -37,9 +37,9 @@ if (emblaApi.value) {
 </script>
 
 <template>
-  <div class="w-full py-10">
+  <div class="w-full py-8">
     <div class="mb-8 flex items-center justify-between px-12">
-      <h2 class="text-3xl font-bold text-gray-900">Товары по акции</h2>
+      <h2 class="text-3xl font-bold text-gray-900">Недавно просмотренные</h2>
       <button
         class="flex h-[32px] items-center justify-center rounded-[6px] border border-[#1677ff] px-[16px] transition-opacity hover:opacity-80"
       >
@@ -53,7 +53,7 @@ if (emblaApi.value) {
       <div ref="emblaRef" class="overflow-hidden">
         <div class="flex gap-4">
           <div
-            v-for="product in saleProducts"
+            v-for="product in recentProducts"
             :key="product.id"
             class="min-w-0 flex-shrink-0 flex-grow-0"
             style="flex-basis: calc(20% - 13px)"

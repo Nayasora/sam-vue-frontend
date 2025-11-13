@@ -269,3 +269,53 @@ export const saleProducts: Product[] = [
         isBestseller: true
     }
 ]
+
+export const recentProducts: Product[] = [
+    {
+        id: "s1",
+        name: 'Сервер HPE ML350 Gen10 P21786-421/1 (Tower, Xeon Bronze 3206R, 1900 МГц, 8, 11, 1 x 64 ГБ, LFF 3.5", 12)',
+        image: new URL('../assets/popular-products/5800e5af6705928628bf4b8855b40ad7445d3d1e.png', import.meta.url).href,
+        price: 322600,
+        originalPrice: 520000,
+        link: '/store/products/s1',
+        warranty: '5 лет'
+    },
+    {
+        id: "s2",
+        name: 'Сервер HPE ML350 Gen10 P21786-421/1 (Tower, Xeon Bronze 3206R, 1900 МГц, 8, 11, 1 x 64 ГБ, LFF 3.5", 12)',
+        image: new URL('../assets/popular-products/5800e5af6705928628bf4b8855b40ad7445d3d1e.png', import.meta.url).href,
+        price: 322600,
+        originalPrice: 520000,
+        link: '/store/products/s2',
+        warranty: '5 лет'
+    },
+    {
+        id: "s3",
+        name: 'Сервер HPE ML350 Gen10 P21786-421/1 (Tower, Xeon Bronze 3206R, 1900 МГц, 8, 11, 1 x 64 ГБ, LFF 3.5", 12)',
+        image: new URL('../assets/popular-products/5800e5af6705928628bf4b8855b40ad7445d3d1e.png', import.meta.url).href,
+        price: 322600,
+        originalPrice: 520000,
+        link: '/store/products/s3',
+        warranty: '5 лет',
+        isBestseller: true
+    },
+    {
+        id: "s4",
+        name: 'Сервер HPE ML350 Gen10 P21786-421/1 (Tower, Xeon Bronze 3206R, 1900 МГц, 8, 11, 1 x 64 ГБ, LFF 3.5", 12)',
+        image: new URL('../assets/popular-products/5800e5af6705928628bf4b8855b40ad7445d3d1e.png', import.meta.url).href,
+        price: 322600,
+        originalPrice: 520000,
+        link: '/store/products/s4',
+        warranty: '5 лет'
+    },
+    {
+        id: "s5",
+        name: 'Сервер HPE ML350 Gen10 P21786-421/1 (Tower, Xeon Bronze 3206R, 1900 МГц, 8, 11, 1 x 64 ГБ, LFF 3.5", 12)',
+        image: new URL('../assets/popular-products/5800e5af6705928628bf4b8855b40ad7445d3d1e.png', import.meta.url).href,
+        price: 322600,
+        originalPrice: 520000,
+        link: '/store/products/s5',
+        warranty: '5 лет',
+        isBestseller: true
+    }
+]
