@@ -6,7 +6,7 @@ import {BrandCarousel} from "@features/store/components";
 </script>
 
 <template>
-  <div class="store-main">
+  <div class="w-full min-h-screen">
     <div class="mx-auto max-w-[1440px]">
       <CategoryScroll />
       <PromoCarousel />
@@ -19,10 +19,3 @@ import {BrandCarousel} from "@features/store/components";
     </div>
   </div>
 </template>
-
-<style scoped>
-.store-main {
-  width: 100%;
-  min-height: 100vh;
-}
-</style>

@@ -22,7 +22,7 @@ const navItems: NavItem[] = [
 </script>
 
 <template>
-  <nav class="nav-menu">
+  <nav class="flex items-center gap-6">
     <NavMenuItem
       v-for="item in navItems"
       :key="item.key"
@@ -31,11 +31,3 @@ const navItems: NavItem[] = [
     />
   </nav>
 </template>
-
-<style scoped>
-.nav-menu {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-}
-</style>

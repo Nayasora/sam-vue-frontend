@@ -7,19 +7,19 @@ import LoginButton from './LoginButton.vue'
 </script>
 
 <template>
-  <header class="app-header">
-    <div class="max-w-[1440px] mx-auto px-6">
-      <div class="header-container">
-        <div class="header-logo">
+  <header class="w-full border-b border-gray-100 bg-white">
+    <div class="mx-auto max-w-[1440px] px-6">
+      <div class="flex items-center justify-between gap-6 py-3">
+        <div class="flex-shrink-0">
           <Logo />
         </div>
 
-        <div class="header-center">
+        <div class="flex flex-1 max-w-[700px] items-center gap-4">
           <CatalogButton />
           <SearchInput />
         </div>
 
-        <div class="header-right">
+        <div class="flex flex-shrink-0 items-center gap-6">
           <NavMenu />
           <LoginButton />
         </div>
@@ -27,38 +27,3 @@ import LoginButton from './LoginButton.vue'
     </div>
   </header>
 </template>
-
-<style scoped>
-.app-header {
-  width: 100%;
-  background: white;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-}
-
-.header-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 0;
-  gap: 24px;
-}
-
-.header-logo {
-  flex-shrink: 0;
-}
-
-.header-center {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  flex: 1;
-  max-width: 700px;
-}
-
-.header-right {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  flex-shrink: 0;
-}
-</style>

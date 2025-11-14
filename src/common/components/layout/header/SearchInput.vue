@@ -1,91 +1,21 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="search-container">
-    <div class="search-input-wrapper">
+  <div class="flex h-10 flex-1 overflow-hidden rounded-lg border border-gray-200">
+    <div class="flex flex-1 items-center gap-2 bg-white px-3">
       <input
         type="text"
         placeholder="Поиск"
-        class="search-input"
+        class="flex-1 border-none bg-transparent text-base text-gray-900 outline-none placeholder:text-gray-300"
       />
-      <button class="mic-button" type="button" aria-label="Voice search">
+      <button class="flex cursor-pointer items-center justify-center border-none bg-transparent p-1 transition-opacity hover:opacity-70" type="button" aria-label="Voice search">
         <img
           src="/mavbar-main/icons/progress-input-input-icon-audio-outlined.svg"
           alt=""
-          class="h-[16px] w-[16px]"
+          class="size-4"
         />
       </button>
     </div>
-    <button class="search-button">Найти</button>
+    <button class="cursor-pointer whitespace-nowrap border-none bg-primary px-6 text-base text-white transition-colors hover:bg-blue-500 active:bg-blue-600">Найти</button>
   </div>
 </template>
-
-<style scoped>
-.search-container {
-  display: flex;
-  flex: 1;
-  height: 40px;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.search-input-wrapper {
-  display: flex;
-  align-items: center;
-  flex: 1;
-  padding: 0 12px;
-  gap: 8px;
-  background: white;
-}
-
-.search-input {
-  flex: 1;
-  border: none;
-  outline: none;
-  font-size: 16px;
-  line-height: 24px;
-  color: rgba(0, 0, 0, 0.88);
-  background: transparent;
-}
-
-.search-input::placeholder {
-  color: rgba(0, 0, 0, 0.25);
-}
-
-.mic-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 4px;
-  transition: opacity 0.2s;
-}
-
-.mic-button:hover {
-  opacity: 0.7;
-}
-
-.search-button {
-  background: #1677ff;
-  color: white;
-  border: none;
-  padding: 0 24px;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: background-color 0.2s;
-}
-
-.search-button:hover {
-  background: #4096ff;
-}
-
-.search-button:active {
-  background: #0958d9;
-}
-</style>

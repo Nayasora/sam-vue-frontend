@@ -46,8 +46,7 @@ if (emblaApi.value) {
           <div
             v-for="product in popularProducts"
             :key="product.id"
-            class="min-w-0 flex-shrink-0 flex-grow-0"
-            style="flex-basis: calc(20% - 12.8px)"
+            class="min-w-0 w-[calc(20%-0.8rem)] flex-shrink-0 flex-grow-0"
           >
             <ProductCard :product="product" />
           </div>
@@ -57,7 +56,7 @@ if (emblaApi.value) {
       <button
         type="button"
         :disabled="!canScrollPrev"
-        class="absolute left-7 top-1/2 z-10 flex size-10 -translate-y-1/2 items-center justify-center rounded-full border border-[rgba(0,0,0,0.15)] bg-white transition-opacity hover:opacity-80 disabled:cursor-not-allowed disabled:opacity-50"
+        class="absolute left-7 top-1/2 z-10 flex size-10 -translate-y-1/2 items-center justify-center rounded-full border border-gray-200 bg-white transition-opacity hover:opacity-80 disabled:cursor-not-allowed disabled:opacity-50"
         @click="scrollPrev"
       >
         <ChevronLeft :size="18" class="text-black" />
@@ -66,7 +65,7 @@ if (emblaApi.value) {
       <button
         type="button"
         :disabled="!canScrollNext"
-        class="absolute right-7 top-1/2 z-10 flex size-10 -translate-y-1/2 items-center justify-center rounded-full border border-[rgba(0,0,0,0.15)] bg-white transition-opacity hover:opacity-80 disabled:cursor-not-allowed disabled:opacity-50"
+        class="absolute right-7 top-1/2 z-10 flex size-10 -translate-y-1/2 items-center justify-center rounded-full border border-gray-200 bg-white transition-opacity hover:opacity-80 disabled:cursor-not-allowed disabled:opacity-50"
         @click="scrollNext"
       >
         <ChevronRight :size="18" class="text-black" />

@@ -31,19 +31,18 @@ if (emblaApi.value) {
 
 <template>
   <div class="w-full py-8">
-    <h2 class="mb-8 px-12 text-2xl font-semibold" style="color: rgba(0, 0, 0, 0.88)">Бренды товаров</h2>
+    <h2 class="mb-8 px-12 text-2xl font-semibold text-gray-900">Бренды товаров</h2>
 
     <div class="relative w-full px-12">
       <div ref="emblaRef" class="overflow-hidden">
-        <div class="flex gap-6">
+        <div class="flex gap-4">
           <a
             v-for="brand in brands"
             :key="brand.id"
             :href="brand.link"
-            class="min-w-0 flex-shrink-0 flex-grow-0"
-            style="flex-basis: calc(20% - 19.2px)"
+            class="min-w-0 w-[calc(20%-0.8rem)] flex-shrink-0 flex-grow-0"
           >
-            <div class="flex h-[100px] items-center justify-center rounded-xl px-4 py-2" style="background-color: #E6F4FF">
+            <div class="flex h-[100px] items-center justify-center rounded-xl bg-blue-50 px-4 py-2">
               <img :src="brand.image" :alt="brand.name" class="h-auto max-h-[60px] w-auto max-w-full object-contain" />
             </div>
           </a>
@@ -53,7 +52,7 @@ if (emblaApi.value) {
       <button
         type="button"
         :disabled="!canScrollNext"
-        class="absolute right-7 top-1/2 z-10 flex size-10 -translate-y-1/2 items-center justify-center rounded-full border border-[rgba(0,0,0,0.15)] bg-white transition-opacity hover:opacity-80 disabled:cursor-not-allowed disabled:opacity-50"
+        class="absolute right-7 top-1/2 z-10 flex size-10 -translate-y-1/2 items-center justify-center rounded-full border border-gray-200 bg-white transition-opacity hover:opacity-80 disabled:cursor-not-allowed disabled:opacity-50"
         @click="scrollNext"
       >
         <ChevronRight :size="18" class="text-black" />

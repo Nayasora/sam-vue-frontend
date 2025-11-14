@@ -2,13 +2,6 @@
 
 <template>
   <div class="flex flex-col items-start gap-0.5">
-    <img
-      src="/logo.svg"
-      alt="SAM"
-      class=""
-    />
+    <img src="/logo.svg" alt="SAM" />
   </div>
 </template>
-
-<style scoped>
-</style>

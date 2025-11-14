@@ -3,10 +3,10 @@ const promo = new URL('../assets/promo-sections/promo-single.png', import.meta.u
 </script>
 
 <template>
-  <div class="bg-white px-12 py-8 px-[10%]">
-    <div class="flex gap-6 w-full">
-      <div class="flex-1 aspect-[16/4] rounded-[24px] overflow-hidden">
-        <img :src="promo" alt="" class="w-full h-full object-contain" />
+  <div class="bg-white px-[10%] py-8">
+    <div class="flex w-full gap-6">
+      <div class="aspect-[16/4] flex-1 overflow-hidden rounded-3xl">
+        <img :src="promo" alt="" class="size-full object-contain" />
       </div>
     </div>
   </div>

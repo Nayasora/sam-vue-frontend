@@ -29,54 +29,51 @@ const formatPrice = (price: number): string => {
       />
     </div>
 
-    <div class="flex w-full flex-col gap-[16px] pt-[16px]">
-      <div class="flex w-full flex-col gap-[8px]">
-        <div class="flex items-center gap-[4px]">
-          <p class="text-[20px] font-semibold leading-[28px]" style="color: rgba(0, 0, 0, 0.88)">
+    <div class="flex w-full flex-col gap-4 pt-4">
+      <div class="flex w-full flex-col gap-2">
+        <div class="flex items-center gap-1">
+          <p class="text-xl font-semibold leading-7 text-gray-900">
             {{ formatPrice(product.price) }} ₸
           </p>
-          <p v-if="product.originalPrice" class="text-[14px] font-normal leading-[22px] line-through" style="color: rgba(0, 0, 0, 0.45)">
+          <p v-if="product.originalPrice" class="text-sm font-normal leading-[22px] text-gray-400 line-through">
             {{ formatPrice(product.originalPrice) }}
           </p>
         </div>
 
-        <div class="h-[44px] max-h-[44px]">
-          <p class="line-clamp-2 text-[14px] font-normal leading-[22px]" style="color: rgba(0, 0, 0, 0.88)">
+        <div class="h-11 max-h-11">
+          <p class="line-clamp-2 text-sm font-normal leading-[22px] text-gray-900">
             {{ product.name }}
           </p>
         </div>
 
         <div v-if="product.warranty" class="flex items-center">
-          <div class="flex items-center gap-[6px]">
-            <ShieldCheck :size="16" style="color: rgba(0, 0, 0, 0.65)" />
-            <p class="text-[12px] font-normal leading-[20px]" style="color: rgba(0, 0, 0, 0.65)">
+          <div class="flex items-center gap-1.5">
+            <ShieldCheck :size="16" class="text-gray-600" />
+            <p class="text-xs font-normal leading-5 text-gray-600">
               Гарантия
             </p>
           </div>
-          <div class="px-[8px]">
-            <div class="h-[12px] w-0 border-l border-[rgba(0,0,0,0.15)]" />
+          <div class="px-2">
+            <div class="h-3 w-0 border-l border-gray-200" />
           </div>
-          <p class="text-[12px] font-normal leading-[20px]" style="color: rgba(0, 0, 0, 0.65)">
+          <p class="text-xs font-normal leading-5 text-gray-600">
             {{ product.warranty }}
           </p>
         </div>
       </div>
 
-      <div class="flex w-full gap-[8px]">
+      <div class="flex w-full gap-2">
         <button
-          class="flex h-[40px] flex-1 items-center justify-center rounded-[8px] bg-[#1677ff] px-[16px]"
-          style="box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.02)"
+          class="flex h-10 flex-1 items-center justify-center rounded-lg bg-primary px-4 text-base font-normal leading-6 text-white shadow-sm"
           @click.prevent
         >
-          <p class="text-[16px] font-normal leading-[24px] text-white">
-            В корзину
-          </p>
+          В корзину
         </button>
         <button
-          class="flex size-[40px] items-center justify-center rounded-[8px] border border-[rgba(0,0,0,0.15)] bg-white"
+          class="flex size-10 items-center justify-center rounded-lg border border-gray-200 bg-white"
           @click.prevent
         >
-          <Heart :size="18" style="color: rgba(0, 0, 0, 0.65)" />
+          <Heart :size="18" class="text-gray-600" />
         </button>
       </div>
     </div>

@@ -11,65 +11,13 @@ defineProps<Props>()
 <template>
   <router-link
     :to="link"
-    class="category-card"
+    class="relative flex min-h-[76px] flex-shrink-0 cursor-pointer items-center gap-4 overflow-hidden rounded-xl bg-blue-50 px-4 py-2 transition-shadow hover:shadow-md"
   >
-    <div class="category-card__text">
-      <p>{{ name }}</p>
+    <div class="flex h-full items-center">
+      <p class="whitespace-nowrap text-sm font-semibold text-gray-900">{{ name }}</p>
     </div>
-    <div class="category-card__image">
-      <img :src="image" :alt="name" />
+    <div class="flex w-[70px] flex-shrink-0 items-center justify-center">
+      <img :src="image" :alt="name" class="max-h-[60px] max-w-full object-contain" />
     </div>
   </router-link>
 </template>
-
-<style scoped>
-.category-card {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 8px 16px;
-  background-color: #e6f4ff;
-  border-radius: 12px;
-  overflow: hidden;
-  flex-shrink: 0;
-  min-height: 76px;
-  cursor: pointer;
-  text-decoration: none;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.category-card:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
-
-.category-card__text {
-  display: flex;
-  align-items: center;
-  height: 100%;
-}
-
-.category-card__text p {
-  font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 22px;
-  color: rgba(0, 0, 0, 0.88);
-  white-space: nowrap;
-  margin: 0;
-}
-
-.category-card__image {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 70px;
-  flex-shrink: 0;
-}
-
-.category-card__image img {
-  max-width: 100%;
-  max-height: 60px;
-  object-fit: contain;
-}
-</style>

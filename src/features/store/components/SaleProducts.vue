@@ -41,11 +41,9 @@ if (emblaApi.value) {
     <div class="mb-8 flex items-center justify-between px-12">
       <h2 class="text-3xl font-bold text-gray-900">Товары по акции</h2>
       <button
-        class="flex h-[32px] items-center justify-center rounded-[6px] border border-[#1677ff] px-[16px] transition-opacity hover:opacity-80"
+        class="flex h-8 items-center justify-center rounded-md border border-primary px-4 text-sm text-primary transition-opacity hover:opacity-80"
       >
-        <span class="text-[14px] font-normal leading-[22px] text-[#1677ff]">
-          Смотреть все
-        </span>
+        Смотреть все
       </button>
     </div>
 
@@ -55,8 +53,7 @@ if (emblaApi.value) {
           <div
             v-for="product in saleProducts"
             :key="product.id"
-            class="min-w-0 flex-shrink-0 flex-grow-0"
-            style="flex-basis: calc(20% - 13px)"
+            class="min-w-0 w-[calc(20%-0.8rem)] flex-shrink-0 flex-grow-0"
           >
             <ProductCard :product="product" />
           </div>
@@ -66,7 +63,7 @@ if (emblaApi.value) {
       <button
         type="button"
         :disabled="!canScrollPrev"
-        class="absolute left-7 top-1/2 z-10 flex size-10 -translate-y-1/2 items-center justify-center rounded-full border border-[rgba(0,0,0,0.15)] bg-white transition-opacity hover:opacity-80 disabled:cursor-not-allowed disabled:opacity-50"
+        class="absolute left-7 top-1/2 z-10 flex size-10 -translate-y-1/2 items-center justify-center rounded-full border border-gray-200 bg-white transition-opacity hover:opacity-80 disabled:cursor-not-allowed disabled:opacity-50"
         @click="scrollPrev"
       >
         <ChevronLeft :size="18" class="text-black" />
@@ -75,7 +72,7 @@ if (emblaApi.value) {
       <button
         type="button"
         :disabled="!canScrollNext"
-        class="absolute right-7 top-1/2 z-10 flex size-10 -translate-y-1/2 items-center justify-center rounded-full border border-[rgba(0,0,0,0.15)] bg-white transition-opacity hover:opacity-80 disabled:cursor-not-allowed disabled:opacity-50"
+        class="absolute right-7 top-1/2 z-10 flex size-10 -translate-y-1/2 items-center justify-center rounded-full border border-gray-200 bg-white transition-opacity hover:opacity-80 disabled:cursor-not-allowed disabled:opacity-50"
         @click="scrollNext"
       >
         <ChevronRight :size="18" class="text-black" />

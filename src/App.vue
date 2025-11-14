@@ -13,5 +13,3 @@ import { Footer } from '@common/components/layout/footer'
     <Footer />
   </div>
 </template>
-
-<style scoped></style>
