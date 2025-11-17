@@ -33,43 +33,43 @@ export interface Brand {
 export const categoryCards: CategoryCard[] = [
     {
     id: 'servers',
-    name: 'Сервера',
+    name: 'products.categories.servers',
     image: new URL('../assets/product-categories/5800e5af6705928628bf4b8855b40ad7445d3d1e.png', import.meta.url).href,
     link: '/store/servers'
     },
     {
     id: 'storage',
-    name: 'СХД',
+    name: 'products.categories.storage',
     image: new URL('../assets/product-categories/eaf7ece79bbc58e58c35a0c177db2a6d0c706139.png', import.meta.url).href,
     link: '/store/storage'
     },
     {
     id: 'switches',
-    name: 'Коммутаторы',
+    name: 'products.categories.switches',
     image: new URL('../assets/product-categories/711e594c888b7442a07d42b260dd0e0e33a055cf.png', import.meta.url).href,
     link: '/store/switches'
     },
     {
     id: 'ups',
-    name: 'ИБП',
+    name: 'products.categories.ups',
     image: new URL('../assets/product-categories/c26643e51be38c6e105e515f464f7be54ffb6046.png', import.meta.url).href,
     link: '/store/ups'
     },
     {
     id: 'monitors',
-    name: 'Мониторы',
+    name: 'products.categories.monitors',
     image: new URL('../assets/product-categories/c76d3bd5d24b79c30ff2233c3a0d6be1638b807a.png', import.meta.url).href,
     link: '/store/monitors'
     },
     {
     id: 'processors',
-    name: 'Процессоры',
+    name: 'products.categories.processors',
     image: new URL('../assets/product-categories/39c468b679ca60bdae20ede6a4e2cb28c8d751c4.png', import.meta.url).href,
     link: '/store/processors'
     },
     {
     id: 'ram',
-    name: 'ОЗУ',
+    name: 'products.categories.ram',
     image: new URL('../assets/product-categories/35362449031dcf0e83e82af2655a71ff05ac9cbc.png', import.meta.url).href,
     link: '/store/ram'
     }
@@ -110,7 +110,7 @@ export const popularProducts: Product[] = [
         price: 322600,
         originalPrice: 520000,
         link: '/store/products/1',
-        warranty: '5 лет',
+        warranty: 'products.warranty.years5',
         isBestseller: true
     },
     {
@@ -120,7 +120,7 @@ export const popularProducts: Product[] = [
         price: 425300,
         originalPrice: 580000,
         link: '/store/products/2',
-        warranty: '3 года',
+        warranty: 'products.warranty.years3',
         isBestseller: false
     },
     {
@@ -130,7 +130,7 @@ export const popularProducts: Product[] = [
         price: 385900,
         originalPrice: 490000,
         link: '/store/products/3',
-        warranty: '5 лет',
+        warranty: 'products.warranty.years5',
         isBestseller: true
     },
     {
@@ -140,7 +140,7 @@ export const popularProducts: Product[] = [
         price: 298500,
         originalPrice: 420000,
         link: '/store/products/4',
-        warranty: '3 года',
+        warranty: 'products.warranty.years3',
         isBestseller: false
     },
     {
@@ -150,7 +150,7 @@ export const popularProducts: Product[] = [
         price: 275600,
         originalPrice: 360000,
         link: '/store/products/5',
-        warranty: '5 лет',
+        warranty: 'products.warranty.years5',
         isBestseller: false
     },
     {
@@ -160,7 +160,7 @@ export const popularProducts: Product[] = [
         price: 195400,
         originalPrice: 285000,
         link: '/store/products/6',
-        warranty: '3 года',
+        warranty: 'products.warranty.years3',
         isBestseller: true
     },
     {
@@ -170,7 +170,7 @@ export const popularProducts: Product[] = [
         price: 356700,
         originalPrice: 475000,
         link: '/store/products/7',
-        warranty: '5 лет',
+        warranty: 'products.warranty.years5',
         isBestseller: false
     },
     {
@@ -180,7 +180,7 @@ export const popularProducts: Product[] = [
         price: 445800,
         originalPrice: 610000,
         link: '/store/products/8',
-        warranty: '3 года',
+        warranty: 'products.warranty.years3',
         isBestseller: true
     }
 ]
@@ -211,7 +211,7 @@ export const saleProducts: Product[] = [
         price: 322600,
         originalPrice: 520000,
         link: '/store/products/s3',
-        warranty: '5 лет',
+        warranty: 'products.warranty.years5',
         isBestseller: true
     },
     {
@@ -230,7 +230,7 @@ export const saleProducts: Product[] = [
         price: 322600,
         originalPrice: 520000,
         link: '/store/products/s5',
-        warranty: '5 лет',
+        warranty: 'products.warranty.years5',
         isBestseller: true
     }
 ]
@@ -261,7 +261,7 @@ export const recentProducts: Product[] = [
         price: 322600,
         originalPrice: 520000,
         link: '/store/products/s3',
-        warranty: '5 лет',
+        warranty: 'products.warranty.years5',
         isBestseller: true
     },
     {
@@ -280,7 +280,7 @@ export const recentProducts: Product[] = [
         price: 322600,
         originalPrice: 520000,
         link: '/store/products/s5',
-        warranty: '5 лет',
+        warranty: 'products.warranty.years5',
         isBestseller: true
     }
 ]

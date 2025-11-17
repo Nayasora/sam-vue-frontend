@@ -31,7 +31,7 @@ if (emblaApi.value) {
 
 <template>
   <div class="w-full py-8">
-    <h2 class="mb-8 px-12 text-2xl font-semibold text-gray-900">Бренды товаров</h2>
+    <h2 class="mb-8 px-12 text-2xl font-semibold text-gray-900">{{ $t('store.brands') }}</h2>
 
     <div class="relative w-full px-12">
       <div ref="emblaRef" class="overflow-hidden">

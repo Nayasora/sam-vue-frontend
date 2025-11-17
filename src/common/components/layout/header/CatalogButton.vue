@@ -7,6 +7,6 @@
       alt=""
       class="h-[14px] w-[18px]"
     />
-    <span>Каталог</span>
+    <span>{{ $t('header.catalog') }}</span>
   </button>
 </template>

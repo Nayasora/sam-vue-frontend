@@ -1,24 +1,28 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
+import { computed } from 'vue'
 import NavMenuItem from './NavMenuItem.vue'
 import type { NavItem } from './types'
 
-const navItems: NavItem[] = [
+const { t } = useI18n()
+
+const navItems = computed<NavItem[]>(() => [
   {
     icon: '/mavbar-main/icons/progress-navbar-item-heart.svg',
-    label: 'Избранное',
+    label: t('header.favorites'),
     key: 'favorites'
   },
   {
     icon: '/mavbar-main/icons/progress-navbar-item-box-iso.svg',
-    label: 'Заказы',
+    label: t('header.orders'),
     key: 'orders'
   },
   {
     icon: '/mavbar-main/icons/progress-navbar-item-shopping-bag.svg',
-    label: 'Корзина',
+    label: t('header.cart'),
     key: 'cart'
   }
-]
+])
 </script>
 
 <template>

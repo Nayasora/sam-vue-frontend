@@ -38,7 +38,7 @@ if (emblaApi.value) {
 
 <template>
   <div class="w-full py-8">
-    <h2 class="mb-8 px-12 text-3xl font-bold text-gray-900">Популярные товары</h2>
+    <h2 class="mb-8 px-12 text-3xl font-bold text-gray-900">{{ $t('store.popularProducts') }}</h2>
 
     <div class="relative w-full px-12">
       <div ref="emblaRef" class="overflow-hidden">

@@ -39,11 +39,11 @@ if (emblaApi.value) {
 <template>
   <div class="w-full py-8">
     <div class="mb-8 flex items-center justify-between px-12">
-      <h2 class="text-3xl font-bold text-gray-900">Недавно просмотренные</h2>
+      <h2 class="text-3xl font-bold text-gray-900">{{ $t('store.recentProducts') }}</h2>
       <button
         class="flex h-8 items-center justify-center rounded-md border border-primary px-4 text-sm text-primary transition-opacity hover:opacity-80"
       >
-        Смотреть все
+        {{ $t('store.viewAll') }}
       </button>
     </div>
 

@@ -19,7 +19,7 @@ const formatPrice = (price: number): string => {
       <img
         v-if="product.isBestseller"
         src="/store/images/product-card-badge-bestseller.png"
-        alt="Бестселлер"
+        :alt="$t('store.bestseller')"
         class="absolute right-[-8px] top-[8px] z-10 h-auto w-auto"
       />
       <img
@@ -50,14 +50,14 @@ const formatPrice = (price: number): string => {
           <div class="flex items-center gap-1.5">
             <ShieldCheck :size="16" class="text-gray-600" />
             <p class="text-xs font-normal leading-5 text-gray-600">
-              Гарантия
+              {{ $t('store.warranty') }}
             </p>
           </div>
           <div class="px-2">
             <div class="h-3 w-0 border-l border-gray-200" />
           </div>
           <p class="text-xs font-normal leading-5 text-gray-600">
-            {{ product.warranty }}
+            {{ $t(product.warranty) }}
           </p>
         </div>
       </div>
@@ -67,7 +67,7 @@ const formatPrice = (price: number): string => {
           class="flex h-10 flex-1 items-center justify-center rounded-lg bg-primary px-4 text-base font-normal leading-6 text-white shadow-sm"
           @click.prevent
         >
-          В корзину
+          {{ $t('store.addToCart') }}
         </button>
         <button
           class="flex size-10 items-center justify-center rounded-lg border border-gray-200 bg-white"
