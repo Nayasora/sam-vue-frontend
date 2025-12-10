@@ -20,7 +20,8 @@ export class ApiClient {
       version: config.version ?? '',
       timeout: config.timeout ?? 30000,
       headers: config.headers ?? {},
-      middleware: config.middleware ?? []
+      middleware: config.middleware ?? [],
+      credentials: config.credentials ?? 'same-origin'
     }
     this.middleware = [...this.config.middleware]
   }
@@ -144,7 +145,8 @@ export class ApiClient {
     const fetchOptions: RequestInit = {
       method: options.method,
       headers: options.headers,
-      signal: AbortSignal.timeout(options.timeout || this.config.timeout)
+      signal: AbortSignal.timeout(options.timeout || this.config.timeout),
+      credentials: this.config.credentials
     }
 
     if (options.body && options.method !== 'GET') {

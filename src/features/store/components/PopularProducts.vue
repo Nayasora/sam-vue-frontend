@@ -1,9 +1,12 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted, computed, watch } from 'vue'
 import emblaCarouselVue from 'embla-carousel-vue'
 import { ChevronLeft, ChevronRight } from 'lucide-vue-next'
 import ProductCard from './ProductCard.vue'
-import { popularProducts } from '../types'
+import { useProductsStore } from '@common/catalog'
+import { mapApiProductsToLocal } from '../utils/product-mapper'
+
+const productsStore = useProductsStore()
 
 const [emblaRef, emblaApi] = emblaCarouselVue({
   loop: true,
@@ -14,6 +17,8 @@ const [emblaRef, emblaApi] = emblaCarouselVue({
 
 const canScrollPrev = ref(true)
 const canScrollNext = ref(true)
+
+const products = computed(() => mapApiProductsToLocal(productsStore.featuredProducts))
 
 const onSelect = () => {
   if (!emblaApi.value) return
@@ -29,11 +34,17 @@ const scrollNext = () => {
   if (emblaApi.value) emblaApi.value.scrollNext()
 }
 
-if (emblaApi.value) {
-  emblaApi.value.on('select', onSelect)
-  emblaApi.value.on('init', onSelect)
-  onSelect()
-}
+watch(emblaApi, (api) => {
+  if (api) {
+    api.on('select', onSelect)
+    api.on('init', onSelect)
+    onSelect()
+  }
+})
+
+onMounted(() => {
+  productsStore.fetchFeaturedProducts(10)
+})
 </script>
 
 <template>
@@ -44,7 +55,7 @@ if (emblaApi.value) {
       <div ref="emblaRef" class="overflow-hidden">
         <div class="flex gap-4">
           <div
-            v-for="product in popularProducts"
+            v-for="product in products"
             :key="product.id"
             class="min-w-0 w-[calc(20%-0.8rem)] flex-shrink-0 flex-grow-0"
           >

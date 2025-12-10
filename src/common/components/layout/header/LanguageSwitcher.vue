@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { useLocaleStore } from '@common/locale/store/locale.store'
 import { computed } from 'vue'
+import type { Locale } from '@common/locale/types'
 
 const localeStore = useLocaleStore()
 
-const languages = [
+const languages: { code: Locale; label: string }[] = [
   { code: 'ru', label: 'RU' },
   { code: 'en', label: 'EN' },
   { code: 'kz', label: 'KZ' }
@@ -15,7 +16,7 @@ const currentLanguage = computed(() => {
   return lang?.label || 'RU'
 })
 
-const changeLanguage = (code: string) => {
+const changeLanguage = (code: Locale) => {
   localeStore.setLocale(code)
 }
 </script>

@@ -1,10 +1,12 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted, computed } from 'vue'
 import emblaCarouselVue from 'embla-carousel-vue'
 import Autoplay from 'embla-carousel-autoplay'
 import { ChevronLeft, ChevronRight } from 'lucide-vue-next'
 import PromoCard from './PromoCard.vue'
-import { promoBanners } from '../types'
+import { slidersService, type Slider } from '@common/api/services/sliders.service'
+import { promoBanners as defaultBanners } from '../types'
+import type { PromoBanner } from '../types'
 
 const [emblaRef, emblaApi] = emblaCarouselVue(
   {
@@ -20,6 +22,21 @@ const [emblaRef, emblaApi] = emblaCarouselVue(
     })
   ]
 )
+
+const apiSliders = ref<Slider[]>([])
+const loading = ref(true)
+
+const banners = computed<PromoBanner[]>(() => {
+  if (apiSliders.value.length > 0) {
+    return apiSliders.value.map(slider => ({
+      id: String(slider.id),
+      title: slider.title || '',
+      image: slider.image_url,
+      link: slider.slider_path || slider.path || '/catalog'
+    }))
+  }
+  return defaultBanners
+})
 
 const canScrollPrev = ref(true)
 const canScrollNext = ref(true)
@@ -38,11 +55,26 @@ const scrollNext = () => {
   if (emblaApi.value) emblaApi.value.scrollNext()
 }
 
-if (emblaApi.value) {
-  emblaApi.value.on('select', onSelect)
-  emblaApi.value.on('init', onSelect)
-  onSelect()
+async function loadSliders() {
+  loading.value = true
+  try {
+    apiSliders.value = await slidersService.getList()
+  } catch (error) {
+    console.error('Error loading sliders:', error)
+  } finally {
+    loading.value = false
+  }
 }
+
+onMounted(() => {
+  loadSliders()
+
+  if (emblaApi.value) {
+    emblaApi.value.on('select', onSelect)
+    emblaApi.value.on('init', onSelect)
+    onSelect()
+  }
+})
 </script>
 
 <template>
@@ -50,7 +82,7 @@ if (emblaApi.value) {
     <div ref="emblaRef" class="overflow-hidden">
       <div class="flex gap-4">
         <div
-          v-for="banner in promoBanners"
+          v-for="banner in banners"
           :key="banner.id"
           class="min-w-0 w-[calc(80%-0.8rem)] flex-shrink-0 flex-grow-0"
         >

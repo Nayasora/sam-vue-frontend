@@ -88,6 +88,7 @@ export interface ApiClientConfig {
   timeout?: number
   headers?: Record<string, string>
   middleware?: ApiMiddleware[]
+  credentials?: RequestCredentials
 }
 
 export interface RateLimitInfo {

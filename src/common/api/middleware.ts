@@ -161,3 +161,26 @@ export const idempotencyMiddleware: ApiMiddleware = {
     return context
   }
 }
+
+export function createAuthMiddleware(getToken: () => string | null): ApiMiddleware {
+  return {
+    name: 'auth',
+    onRequest: (context) => {
+      const token = getToken()
+      if (token) {
+        context.options.headers = {
+          ...context.options.headers,
+          'Authorization': `Bearer ${token}`
+        }
+      }
+      return context
+    },
+    onError: (context) => {
+      if ('status' in context.error && context.error.status === 401) {
+        localStorage.removeItem('auth_token')
+        window.dispatchEvent(new CustomEvent('auth:logout'))
+      }
+      return context
+    }
+  }
+}

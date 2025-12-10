@@ -1,14 +1,31 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted, computed } from 'vue'
 import emblaCarouselVue from 'embla-carousel-vue'
 import { ChevronRight } from 'lucide-vue-next'
-import { brands } from '../types'
+import { attributesService, type AttributeOption } from '@common/api/services/attributes.service'
+import { brands as defaultBrands } from '../types'
+import type { Brand } from '../types'
 
 const [emblaRef, emblaApi] = emblaCarouselVue({
   loop: true,
   align: 'start',
   slidesToScroll: 1,
   containScroll: 'trimSnaps'
+})
+
+const apiBrands = ref<AttributeOption[]>([])
+const loading = ref(true)
+
+const brands = computed<Brand[]>(() => {
+  if (apiBrands.value.length > 0) {
+    return apiBrands.value.map(brand => ({
+      id: String(brand.id),
+      name: brand.label || brand.admin_name,
+      image: brand.swatch_value || `/brands/${brand.admin_name.toLowerCase()}.png`,
+      link: `/catalog?brand=${brand.id}`
+    }))
+  }
+  return defaultBrands
 })
 
 const canScrollNext = ref(true)
@@ -22,11 +39,26 @@ const scrollNext = () => {
   if (emblaApi.value) emblaApi.value.scrollNext()
 }
 
-if (emblaApi.value) {
-  emblaApi.value.on('select', onSelect)
-  emblaApi.value.on('init', onSelect)
-  onSelect()
+async function loadBrands() {
+  loading.value = true
+  try {
+    apiBrands.value = await attributesService.getBrands()
+  } catch (error) {
+    console.error('Error loading brands:', error)
+  } finally {
+    loading.value = false
+  }
 }
+
+onMounted(() => {
+  loadBrands()
+
+  if (emblaApi.value) {
+    emblaApi.value.on('select', onSelect)
+    emblaApi.value.on('init', onSelect)
+    onSelect()
+  }
+})
 </script>
 
 <template>
@@ -36,16 +68,16 @@ if (emblaApi.value) {
     <div class="relative w-full px-12">
       <div ref="emblaRef" class="overflow-hidden">
         <div class="flex gap-4">
-          <a
+          <RouterLink
             v-for="brand in brands"
             :key="brand.id"
-            :href="brand.link"
+            :to="brand.link"
             class="min-w-0 w-[calc(20%-0.8rem)] flex-shrink-0 flex-grow-0"
           >
             <div class="flex h-[100px] items-center justify-center rounded-xl bg-blue-50 px-4 py-2">
               <img :src="brand.image" :alt="brand.name" class="h-auto max-h-[60px] w-auto max-w-full object-contain" />
             </div>
-          </a>
+          </RouterLink>
         </div>
       </div>
 

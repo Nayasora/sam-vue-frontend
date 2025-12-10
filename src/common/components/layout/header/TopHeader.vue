@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
 import LanguageSwitcher from './LanguageSwitcher.vue'
+import CitySelector from './CitySelector.vue'
 
 const { t } = useI18n()
 </script>
@@ -9,14 +10,7 @@ const { t } = useI18n()
   <div class="relative h-[38px] w-full overflow-visible bg-primary before:absolute before:inset-0 before:bg-[url('/top-bar/images/top-bar-background.png')] before:bg-cover before:bg-center before:pointer-events-none">
     <div class="relative mx-auto flex h-full max-w-[1440px] items-center justify-between px-6 py-2">
       <div class="relative z-10 flex items-center gap-0">
-        <div class="flex cursor-pointer items-center gap-1">
-          <span class="whitespace-nowrap text-sm text-white">{{ t('header.city') }}</span>
-          <img
-            src="/top-bar/icons/chevron-down.svg"
-            alt=""
-            class="block size-3 flex-shrink-0"
-          />
-        </div>
+        <CitySelector />
 
         <div class="mx-3 h-4 w-px bg-gray-100"></div>
 
